@@ -24,9 +24,6 @@ abstract class PillsDatabase : RoomDatabase() {
                 INSTANCE = instance
                 return instance
             }
-
         }
     }
-
-
 }
