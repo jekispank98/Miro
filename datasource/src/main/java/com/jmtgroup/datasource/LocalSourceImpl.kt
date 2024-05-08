@@ -1,6 +1,10 @@
 package com.jmtgroup.datasource
 
 import com.jmtgroup.datasource.database.PillsDao
+import com.jmtgroup.pills.domain.LocalSource
+import com.jmtgroup.pills.domain.models.PillsModel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class LocalSourceImpl @Inject constructor(private val pillsDao: PillsDao): LocalSource {
@@ -10,20 +14,11 @@ class LocalSourceImpl @Inject constructor(private val pillsDao: PillsDao): Local
         pillsDao.addPills(mapper.pillsModelToPillsEntity(pillsModel))
     }
 
-    override suspend fun getAllPills(): List<PillsModel> {
-        return mapper.listPillsEntityToListPillsModel(pillsDao.getAllPills())
+    override suspend fun getAllPills(): Flow<List<PillsModel>> {
+        return pillsDao.getAllPills().map { mapper.listPillsEntityToListPillsModel(it) }
     }
 
     override suspend fun deletePills(pillsModel: PillsModel) {
         pillsDao.deletePills(mapper.pillsModelToPillsEntity(pillsModel))
     }
-}
-
-interface LocalSource {
-
-    suspend fun addPills(pillsModel: PillsModel)
-
-    suspend fun getAllPills(): List<PillsModel>
-
-    suspend fun deletePills(pillsModel: PillsModel)
 }

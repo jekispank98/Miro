@@ -1,6 +1,7 @@
 package com.jmtgroup.datasource
 
 import com.jmtgroup.datasource.database.PillsEntity
+import com.jmtgroup.pills.domain.models.PillsModel
 
 class Mapper {
     fun pillsEntityToPillsModel(from: PillsEntity): PillsModel {

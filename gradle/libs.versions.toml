@@ -13,6 +13,8 @@ ksp = "1.9.0-1.0.12"
 room = "2.6.1"
 appcompat = "1.6.1"
 material = "1.11.0"
+coroutines = "1.3.9"
+compose = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,8 +35,11 @@ dagger-hilt = {group = "com.google.dagger", name = "hilt-android", version.ref =
 dagger-hilt-compiler = {group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
 androidx-room = {group = "androidx.room", name = "room-runtime", version.ref = "room"}
 androidx-room-compiler = {group = "androidx.room", name = "room-compiler", version.ref = "room"}
+androidx-room-ktx = {group = "androidx.room", name = "room-ktx", version.ref = "room"}
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+jetbrains-coroutines = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines"}
+compose-navigation = {group = "androidx.navigation", name = "navigation-compose", version.ref = "compose"}
 
 
 [plugins]

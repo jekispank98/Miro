@@ -1,4 +1,4 @@
-package com.jmtgroup.datasource
+package com.jmtgroup.pills.domain.models
 
 data class PillsModel(
     val id: Int = 0,

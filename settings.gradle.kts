@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Miro"
 include(":app")
 include(":datasource")
+include(":pills")
