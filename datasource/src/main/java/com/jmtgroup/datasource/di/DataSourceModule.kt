@@ -4,6 +4,7 @@ import com.jmtgroup.datasource.database.PillsDatabase
 import android.content.Context
 import com.jmtgroup.datasource.LocalSourceImpl
 import com.jmtgroup.datasource.database.PillsDao
+import com.jmtgroup.pills.domain.LocalSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,5 +25,10 @@ class DataSourceModule {
     fun providesDao(pillsDatabase: PillsDatabase) = pillsDatabase.pillsDao()
 
     @Provides
-    fun providesLocalSourceImpl(pillsDao: PillsDao) = LocalSourceImpl(pillsDao)
+    @Singleton
+    fun provideLocalSource(pillsDao: PillsDao) : LocalSource {
+        return LocalSourceImpl(pillsDao)
+    }
+//    @Provides
+//    fun providesLocalSourceImpl(pillsDao: PillsDao) = LocalSourceImpl(pillsDao)
 }

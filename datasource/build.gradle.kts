@@ -44,6 +44,8 @@ dependencies {
     // Room
     implementation(libs.androidx.room)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation(project(":pills"))
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
