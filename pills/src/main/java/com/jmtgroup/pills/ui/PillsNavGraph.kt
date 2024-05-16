@@ -17,7 +17,14 @@ fun NavGraphBuilder.pillsNavGraph(
         startDestination = Screen.PillsList.route,
         route = PILLS_GRAPH_ROUTE
     ) {
-        composable(route = Screen.PillsList.route) { PillsListScreen() }
+        composable(route = Screen.PillsList.route) {
+            PillsListScreen(
+                onAddClick = {
+                    navController.navigate(
+                        route = Screen.AddPills.route
+                    )
+                })
+        }
         composable(route = Screen.AddPills.route) { AddPillsScreen() }
     }
 }

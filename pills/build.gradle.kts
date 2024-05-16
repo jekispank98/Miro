@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.compose.navigation)
     // Hilt
     implementation(libs.dagger.hilt)
+    debugImplementation(libs.ui.tooling)
     ksp(libs.dagger.hilt.compiler)
 
     implementation(libs.jetbrains.coroutines)
